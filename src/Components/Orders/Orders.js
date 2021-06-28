@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../App';
+import './Orders.css';
 
 const Orders = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -60,56 +61,71 @@ const Orders = () => {
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody className='bg-white divide-y divide-gray-200'>
-                                    {orders.map((order) => (
-                                        <tr key={order._id}>
-                                            <td className='px-6 py-4 whitespace-nowrap'>
-                                                <div className='flex items-center'>
-                                                    <div className='flex-shrink-0 h-10 w-10'>
-                                                        <img
-                                                            className='h-10 w-10 rounded-full'
-                                                            src={order.photo}
-                                                            alt=''
-                                                        />
-                                                    </div>
-                                                    <div className='ml-4'>
-                                                        <div className='text-sm font-medium text-gray-900'>
-                                                            {order.name}
+                                {orders.length === 0 ? (
+                                    <div class='loading-bar'>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                ) : (
+                                    <tbody className='bg-white divide-y divide-gray-200'>
+                                        {orders.map((order) => (
+                                            <tr key={order._id}>
+                                                <td className='px-6 py-4 whitespace-nowrap'>
+                                                    <div className='flex items-center'>
+                                                        <div className='flex-shrink-0 h-10 w-10'>
+                                                            <img
+                                                                className='h-10 w-10 rounded-full'
+                                                                src={
+                                                                    order.photo
+                                                                }
+                                                                alt=''
+                                                            />
                                                         </div>
-                                                        <div className='text-sm text-gray-500'>
-                                                            {order.email}
+                                                        <div className='ml-4'>
+                                                            <div className='text-sm font-medium text-gray-900'>
+                                                                {order.name}
+                                                            </div>
+                                                            <div className='text-sm text-gray-500'>
+                                                                {order.email}
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </td>
-                                            <td className='px-6 py-4 whitespace-nowrap'>
-                                                <div className='text-sm text-gray-900'>
-                                                    {order.book.name}
-                                                </div>
-                                                <div className='text-sm text-gray-500'>
-                                                    {order.book.writer}
-                                                </div>
-                                            </td>
-                                            <td className='px-6 py-4 whitespace-nowrap'>
-                                                <span className='px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800'>
-                                                    Active
-                                                </span>
-                                            </td>
-                                            <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>
-                                                ${order.book.price}
-                                            </td>
-                                            <td className='pl-6 py-4 whitespace-nowrap text-left text-sm font-medium'>
-                                                <span className='px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800'>
-                                                    {new Date(
-                                                        order.date
-                                                    ).toDateString(
-                                                        'dd/MM/yyyy'
-                                                    )}
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
+                                                </td>
+                                                <td className='px-6 py-4 whitespace-nowrap'>
+                                                    <div className='text-sm text-gray-900'>
+                                                        {order.book.name}
+                                                    </div>
+                                                    <div className='text-sm text-gray-500'>
+                                                        {order.book.writer}
+                                                    </div>
+                                                </td>
+                                                <td className='px-6 py-4 whitespace-nowrap'>
+                                                    <span className='px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800'>
+                                                        Active
+                                                    </span>
+                                                </td>
+                                                <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-500'>
+                                                    {order.book.price}
+                                                </td>
+                                                <td className='pl-6 py-4 whitespace-nowrap text-left text-sm font-medium'>
+                                                    <span className='px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800'>
+                                                        {new Date(
+                                                            order.date
+                                                        ).toDateString(
+                                                            'dd/MM/yyyy'
+                                                        )}
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                )}
                             </table>
                         </div>
                     </div>
