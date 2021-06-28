@@ -9,13 +9,18 @@ const HomePageBooks = ({ book }) => {
                 <div class='container px-0 bg-gray-100  flex justify-center rounded-lg'>
                     <div class='bg-white max-w-xs shadow-lg cursor-pointer rounded-lg transform hover:scale-105 duration-300 ease-in-out'>
                         <div
-                            class='rounded-t '
+                            class='rounded-t'
                             style={{
                                 justifyContent: 'center',
                                 borderRadius: '50%',
                             }}
                         >
-                            <img src={book.imgURL} alt='' class='rounded-t' />
+                            <img
+                                src={book.imgURL}
+                                style={{ height: '350px', width: '20rem' }}
+                                alt=''
+                                class='rounded-t'
+                            />
                         </div>
                         <div class='flex justify-around w-full  transform -translate-y-5 px-4'>
                             <div class='rounded-full shadow w-10 h-10 flex justify-center items-center bg-purple-100'>

@@ -16,7 +16,7 @@ const Checkout = () => {
         from: { pathname: '/order' },
     };
     useEffect(() => {
-        fetch('http://localhost:8080/book/' + bookId)
+        fetch('https://protected-ridge-28869.herokuapp.com/book/' + bookId)
             .then((res) => res.json())
             .then((data) => setBook(data));
     }, [bookId]);
@@ -35,7 +35,7 @@ const Checkout = () => {
             ...loggedInUser,
             date: new Date(),
         };
-        fetch('http://localhost:8080/addBooking', {
+        fetch('https://protected-ridge-28869.herokuapp.com/addBooking', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newBooking),

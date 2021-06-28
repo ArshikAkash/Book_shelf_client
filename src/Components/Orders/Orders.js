@@ -5,13 +5,17 @@ const Orders = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:8080/bookings?email=' + loggedInUser.email, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                authorization: `Bearer ${sessionStorage.getItem('token')}`,
-            },
-        })
+        fetch(
+            'https://protected-ridge-28869.herokuapp.com/bookings?email=' +
+                loggedInUser.email,
+            {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    authorization: `Bearer ${sessionStorage.getItem('token')}`,
+                },
+            }
+        )
             .then((res) => res.json())
             .then((data) => setOrders(data));
     }, [loggedInUser.email]);

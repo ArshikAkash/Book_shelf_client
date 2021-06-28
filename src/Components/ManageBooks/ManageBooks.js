@@ -30,14 +30,14 @@ const ManageBooks = () => {
     };
 
     useEffect(() => {
-        fetch('http://localhost:8080/books')
+        fetch('https://protected-ridge-28869.herokuapp.com/books')
             .then((res) => res.json())
             .then((data) => {
                 setBooks(data);
             });
     }, [setBooks]);
     const handleDelete = (id) => {
-        fetch(`http://localhost:8080/deleteBook/${id}`, {
+        fetch(`https://protected-ridge-28869.herokuapp.com/deleteBook/${id}`, {
             method: 'DELETE',
         })
             .then((res) => res.json())

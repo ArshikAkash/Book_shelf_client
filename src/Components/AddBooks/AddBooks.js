@@ -48,7 +48,7 @@ const AddBooks = () => {
             imgURL: imgURL,
         };
         console.log(bookData);
-        fetch('http://localhost:8080/addBook', {
+        fetch('https://protected-ridge-28869.herokuapp.com/addBook', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(bookData),
