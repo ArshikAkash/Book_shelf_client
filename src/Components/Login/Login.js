@@ -25,7 +25,7 @@ import 'firebase/auth';
 initializeLoginFrameWork();
 
 const Login = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [setLoggedInUser] = useContext(UserContext);
     const [newUser, setNewUser] = useState(false);
     const [user, setUser] = useState({
         isSignedIn: false,
