@@ -48,7 +48,7 @@ const AddBooks = () => {
             imgURL: imgURL,
         };
         console.log(bookData);
-        fetch('protected-ridge-28869.netlify.app/addBook', {
+        fetch('https://protected-ridge-28869.netlify.app/addBook', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(bookData),

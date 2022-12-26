@@ -16,7 +16,7 @@ const Checkout = () => {
         from: { pathname: '/order' },
     };
     useEffect(() => {
-        fetch('protected-ridge-28869.netlify.app/book/' + bookId)
+        fetch('https://protected-ridge-28869.netlify.app//book/' + bookId)
             .then((res) => res.json())
             .then((data) => setBook(data));
     }, [bookId]);
@@ -35,7 +35,7 @@ const Checkout = () => {
             ...loggedInUser,
             date: new Date(),
         };
-        fetch('protected-ridge-28869.netlify.app/addBooking', {
+        fetch('https://protected-ridge-28869.netlify.app/addBooking', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newBooking),

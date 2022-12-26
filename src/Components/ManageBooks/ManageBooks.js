@@ -23,14 +23,14 @@ const ManageBooks = () => {
     };
 
     useEffect(() => {
-        fetch('protected-ridge-28869.netlify.app/books')
+        fetch('https://protected-ridge-28869.netlify.app/books')
             .then((res) => res.json())
             .then((data) => {
                 setBooks(data);
             });
     }, [setBooks]);
     const handleDelete = (id) => {
-        fetch(`protected-ridge-28869.netlify.app/deleteBook/${id}`, {
+        fetch(`https://protected-ridge-28869.netlify.app//deleteBook/${id}`, {
             method: 'DELETE',
         })
             .then((res) => res.json())
