@@ -1,5 +1,3 @@
-import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
 import { createContext, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
@@ -16,17 +14,7 @@ export const UserContext = createContext();
 function App() {
     const [loggedInUser, setLoggedInUser] = useState({});
     const [user, setUser] = useState({});
-    const firebaseConfig = {
-        apiKey: 'AIzaSyCUIatsXIMrVHGBooJABgWQcK38vzsTPK8',
-        authDomain: 'book-shelf-4c0d0.firebaseapp.com',
-        projectId: 'book-shelf-4c0d0',
-        storageBucket: 'book-shelf-4c0d0.appspot.com',
-        messagingSenderId: '364028137866',
-        appId: '1:364028137866:web:20943bb4dd5c9f0a67b873',
-        measurementId: 'G-R08CLZ0XR0',
-    };
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
+
     return (
         <div className='App h-full '>
             <UserContext.Provider
