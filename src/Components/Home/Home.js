@@ -1,6 +1,6 @@
 import { Grid, makeStyles } from '@material-ui/core';
-import React, { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../../App';
+import React, { useEffect, useState } from 'react';
+
 import HomePageBooks from '../HomePageBooks/HomePageBooks';
 import './../Home/Home.css';
 

@@ -8,7 +8,7 @@ import { Dialog, DialogContent, DialogContentText } from '@material-ui/core';
 const Checkout = () => {
     const { bookId } = useParams();
     const [book, setBook] = useState({});
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [loggedInUser] = useContext(UserContext);
     const [open, setOpen] = useState(false);
     let history = useHistory();
     let location = useLocation();

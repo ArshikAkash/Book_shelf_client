@@ -20,7 +20,7 @@ function classNames(...classes) {
 }
 
 const Nav = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [loggedInUser] = useContext(UserContext);
     const [user, setUser] = useContext(UserContext);
     console.log('from header', user);
     const signOut = () => {

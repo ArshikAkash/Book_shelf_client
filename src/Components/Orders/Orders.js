@@ -3,7 +3,7 @@ import { UserContext } from '../../App';
 import './Orders.css';
 
 const Orders = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [loggedInUser] = useContext(UserContext);
     const [orders, setOrders] = useState([]);
     useEffect(() => {
         fetch(
