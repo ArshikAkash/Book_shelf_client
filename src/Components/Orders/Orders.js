@@ -7,7 +7,7 @@ const Orders = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
         fetch(
-            'https://protected-ridge-28869.herokuapp.com/bookings?email=' +
+            'protected-ridge-28869.netlify.app/bookings?email=' +
                 loggedInUser.email,
             {
                 method: 'GET',

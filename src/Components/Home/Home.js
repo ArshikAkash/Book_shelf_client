@@ -16,7 +16,7 @@ const useStyles = makeStyles({
 const Home = () => {
     const [books, setBooks] = useState([]);
     useEffect(() => {
-        fetch('https://protected-ridge-28869.herokuapp.com/books')
+        fetch('protected-ridge-28869.netlify.app/books')
             .then((res) => res.json())
             .then((data) => {
                 setBooks(data);
